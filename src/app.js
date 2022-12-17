@@ -263,6 +263,13 @@ function App() {
       </p>
 
       <p>This is how many active listings there are:</p>
+      <p>
+        <b>Y-Axis:</b> Amount of Listings/Orders
+      </p>
+      <p>
+        <b>X-Axis:</b> ETH Price
+      </p>
+      <p>This is how many active listings there are:</p>
       <div class="chartWrapper">
         <div class="chartAreaWrapper">
           <canvas id="listings-chart"></canvas>
