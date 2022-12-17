@@ -112,6 +112,32 @@ function App() {
             },
           },
         });
+
+        new Chart(ctx).Line(data, {
+          onAnimationComplete: function () {
+            var sourceCanvas = this.chart.ctx.canvas;
+            // the -5 is so that we don't copy the edges of the line
+            var copyWidth = this.scale.xScalePaddingLeft - 5;
+            // the +5 is so that the bottommost y axis label is not clipped off
+            // we could factor this in using measureText if we wanted to be generic
+            var copyHeight = this.scale.endPoint + 5;
+            var targetCtx = document
+              .getElementById("myChartAxis")
+              .getContext("2d");
+            targetCtx.canvas.width = copyWidth;
+            targetCtx.drawImage(
+              sourceCanvas,
+              0,
+              0,
+              copyWidth,
+              copyHeight,
+              0,
+              0,
+              copyWidth,
+              copyHeight
+            );
+          },
+        });
       })
       .catch(function (error) {
         console.error(error);
@@ -237,13 +263,19 @@ function App() {
       </p>
 
       <p>This is how many active listings there are:</p>
-      <div>
-        <canvas id="listings-chart" width="1200" height="200"></canvas>
+      <div class="chartWrapper">
+        <div class="chartAreaWrapper">
+          <canvas id="listings-chart"></canvas>
+        </div>
+        <canvas id="myChartAxis" height="300" width="0"></canvas>
       </div>
 
       <p>This is how many active buy-orders there are:</p>
-      <div>
-        <canvas id="orders-chart" width="1200" height="200"></canvas>
+      <div class="chartWrapper">
+        <div class="chartAreaWrapper">
+          <canvas id="orders-chart"></canvas>
+        </div>
+        <canvas id="myChartAxis2" height="300" width="0"></canvas>
       </div>
 
       <p>Made by</p>
