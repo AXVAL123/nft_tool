@@ -13,3 +13,7 @@ afterwards start the website via `npm start` in your localhost.
 # License
 
 This project is licensed under the MIT License.
+
+# Problems or Remarks?
+
+Contact `Jan Swoboda#5099` on discord.
