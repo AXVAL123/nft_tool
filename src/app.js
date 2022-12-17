@@ -291,8 +291,7 @@ function App() {
       </a>
       <p>aka Jan Swoboda#5099 on Discord</p>
       <p>
-        P.S.: Join NFT University on Discord, the most sophisticated German NFT
-        Group
+        P.S.: Join NFT University on Discord, my favorite German web3 community
       </p>
       <a href="https://discord.gg/nftuniversity">Discord invite</a>
     </div>
